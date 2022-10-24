@@ -7,6 +7,7 @@
 <h3> :coffee: En progreso :crystal_ball:</h3>
 </center>
 <br />
+
 # Version 1.0 Update
 - :sparkles: Ahora es posible agregar palabras, traduccion y funcionalidad al archivo .bat :tada:  
 - :sparkles: Agregamos la funcion de poder leer el contenido del archivo
