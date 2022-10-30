@@ -17,3 +17,13 @@
 	- :construction_worker: Se esta agregando la funcion de actualizar 
 	- :construction_worker: Algunos bugs menores se han solucionado  :bug: :bug: 
 - :bug::bug::bug: Se agregaron 3 bugs que no sabemos de donde salieron!!, seguiremos informando :bug::bug::bug: 
+
+# Version 2.0 Update
+
+-:sparkles: Ahora si se pueden actualizar los elementos ingresados en nuestro archivo .bat :tada:  
+-:sparkles: El programa es capas de comprobar si el Id ingresa esta en el archivo para poder continuar con el proceso :tada:  
+-:sparkles: Ya se pueden borrar registros de nuestro archivo .bat :bug::bug::tada:  
+- :bug::bug::bug: Los bugs de la version 1.0 ahora son 2.0 :3 :bug::bug::bug: 
+- :milky_way: Offtopic!!!
+- :octocat: Notas del programador: dia 29854..... :octocat:
+- :octocat: El consumo de cafeina esta haciendo resultados :) :octocat:
