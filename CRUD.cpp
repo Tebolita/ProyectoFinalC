@@ -2,12 +2,12 @@
 #include <windows.h>
 using namespace std;
 
-const char *nombre_archivo ="palabras.dat";
+const char *nombre_archivo ="palabras.txt";
 
 struct Palabra{
-    char palabra[50];
+    char nombre[50];
     char traduccion[50];
-    char funcionalidad[200]; 
+    char significado[200]; 
 };
 int crear(){
     FILE* archivo = fopen(nombre_archivo, "a+b");
@@ -18,11 +18,11 @@ int crear(){
     {
         fflush(stdin);
         cout << "Ingrese la palabra a traduccir: ";
-        cin.getline(palabra.palabra,50);
+        cin.getline(palabra.nombre,50);
         cout << "Ingrese la traduccion de la palabra: ";
         cin.getline(palabra.traduccion,50);
         cout << "Ingrese la funcionalidad: ";
-        cin.getline(palabra.funcionalidad,200);
+        cin.getline(palabra.significado,200);
         fwrite(&palabra,sizeof(Palabra),1,archivo);
 
         cout << "Palabra ingresada exitosamente!!" << endl;
@@ -46,9 +46,9 @@ int leer(){
 	int id=0;
 	do{
        // cout << "-----------------------------------------------------------------" << endl;
-		cout <<"Palabra: "<< palabra.palabra << endl;
+		cout <<"Palabra: "<< palabra.nombre << endl;
         cout <<"Traduccion: "<<palabra.traduccion<<endl;
-        cout <<"Funcionalidad: "<<palabra.funcionalidad<<endl;
+        cout <<"Funcionalidad: "<<palabra.significado<<endl;
         cout << "--------------------------------------------------------------------" << endl;
 		fread(&palabra,sizeof(palabra),1,archivo);
 		id++;
@@ -69,7 +69,7 @@ int leerOne(){
     int id=0;
     cout << "Palabras disponibles" << endl;
     do{
-        cout<< id <<": "<<palabra.palabra << " | ";
+        cout<< id <<": "<<palabra.nombre << " | ";
         fread(&palabra,sizeof(palabra),1,archivo);
         id++;
     }while(feof(archivo)==0);
@@ -97,11 +97,11 @@ int actualizar(){
         fseek(archivomodifcar,idfile * sizeof(Palabra),SEEK_SET);
         if(idfile<=id){
             cout << "Ingrese la modificacion de la palabra: ";
-            cin.getline(palabra.palabra,50);
+            cin.getline(palabra.nombre,50);
             cout << "Ingrese la modificacion de la traduccion: " ;
             cin.getline(palabra.traduccion,50);
             cout << "Ingrese la modificacion de la funcionalidad: ";
-            cin.getline(palabra.funcionalidad,200);
+            cin.getline(palabra.significado,200);
             fwrite(&palabra,sizeof(Palabra),1,archivomodifcar);
             
             cout << "Ingrese S para actualizar otra palabra o N para regresar al menu principal" << endl; 
@@ -156,7 +156,7 @@ int borrar(){
             }
             fclose(archivo);
             fclose(archivo_temp);
-         cout << "Ingrese S para eleminar otra palabra o N para regresar al menu principal" << endl; 
+            cout << "Ingrese S para eleminar otra palabra o N para regresar al menu principal" << endl; 
             cin >> continuar;  
             cin.ignore();  
         }else{
